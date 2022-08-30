@@ -11,7 +11,7 @@ jobs:
      steps:
        - uses: actions/checkout@v2
        - name: Use NodeJS 
-         uses : actions/checkout@v1    
+         uses : actions/setup-node@v1    
          with:
           node-version: "12.x"  
        - run: npm ci   
@@ -19,3 +19,13 @@ jobs:
        - run: npm test -- --coverage
          env:
            CI: true
+       - name: Build Project
+         if: github.event_name == 'push'
+         run: npm run build 
+
+       - name: Deploy to staging  
+         if: github.event_name == 'push'
+         run: npx surge --project ./build --domain http://alcoholic-self.surge.sh/
+         env:
+             SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }} 
+             SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
