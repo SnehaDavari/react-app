@@ -18,7 +18,7 @@ core.startGroup("Logging github object");
 console.log(JSON.stringify(github, null, "\t"));
 core.endGroup();
 
-core.exprotVariable("Hello", "hello");
+core.exportVariable("Hello", "hello");
 
 
 
