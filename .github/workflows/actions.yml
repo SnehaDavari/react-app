@@ -15,7 +15,8 @@ jobs:
              
         - run: |
             echo ${{ steps.issue.outputs.issue }} 
-        - uses: ./.github/actions/hello
+            chmod +x ./.github/actions/hello-docker/entrypoint.sh
+        - uses: ./.github/actions/hello-docker
           id: hello
           with:
              who-to-greet: "World"
