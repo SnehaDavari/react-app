@@ -1,5 +1,5 @@
+#!/bin/ash
 
-#!/bin/sh -l
 
  
 
