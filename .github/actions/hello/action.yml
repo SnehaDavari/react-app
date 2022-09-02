@@ -2,13 +2,13 @@ name: Hello World
 author: Sneha_Davari
 description: Some Description
 inputs:
-   who-to-greet:
-     descritption: "who to greet"
-      required: true
-      default: Sneha
+  who-to-greet:
+    description: "who to greet"
+    required: true
+    default: Seha
 outputs:
-  time:
-    descritpion: "The greeting time"
+  Time:
+    description: "The greeting time"
 runs:
   using: "node12"
   main: "dist/index.js"
