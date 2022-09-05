@@ -8,7 +8,7 @@ jobs:
           uses: ./.github/actions/slack
           with:
             slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-            message: Hello Slack
+            message: Hello  Slack
         - uses: SnehaDavari/open-issue@v1
           id: issue
           with: 
