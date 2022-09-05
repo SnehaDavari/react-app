@@ -5,7 +5,7 @@ inputs:
   who-to-greet:
     description: "who to greet"
     required: true
-    default: Seha
+    default: Sneha
 outputs:
   Time:
     description: "The greeting time"
