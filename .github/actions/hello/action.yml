@@ -1,0 +1,14 @@
+name: Hello World
+author: Sneha_Davari
+description: Some Description
+inputs:
+  who-to-greet:
+    description: "who to greet"
+    required: true
+    default: Seha
+outputs:
+  Time:
+    description: "The greeting time"
+runs:
+  using: "node12"
+  main: "dist/index.js"
