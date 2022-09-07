@@ -3,16 +3,16 @@ jobs:
    testing-action:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
-        - uses: ./.github/actions/issue
+        - uses: actions/checkout@v2     
+        - uses: SnehaDavari/open-issue@v1
           id: issue
           with: 
             token: ${{ secrets.GITHUB_TOKEN }}
             title: Title
             body: Body
-            assignees: |
-             SnehaDavari
-             
+            assignees: | 
+             SnehaDavari 
+
         - run: |
             echo ${{ steps.issue.outputs.issue }} 
         - uses: ./.github/actions/hello
