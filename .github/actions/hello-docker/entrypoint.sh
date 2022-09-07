@@ -1,8 +1,5 @@
 #!/bin/ash
 
-
- 
-
 echo "::debug ::Debug Message"
 echo "::warning ::Warning Message"
 echo "::error ::Error Message"
