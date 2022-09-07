@@ -19,10 +19,7 @@ jobs:
             body: Body
             assignees: |
              SnehaDavari
-             
-        - run: |
-            echo ${{ steps.issue.outputs.issue }}
-             
+                  
         - run: |
             echo ${{ steps.issue.outputs.issue }} 
             chmod +x ./.github/actions/hello-docker/entrypoint.sh
