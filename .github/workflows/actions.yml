@@ -4,13 +4,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - name: Send a Slack Message
-          uses: ./.github/actions/slack
-          with:
-            slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-            message: Hello  Slack
-        - name: Open Github Issue 77
-          uses: ./.github/actions/issue
+        - uses: ./.github/actions/issue
           id: issue
           with: 
             token: ${{ secrets.GITHUB_TOKEN }}
@@ -18,5 +12,15 @@ jobs:
             body: Body
             assignees: |
              SnehaDavari
+             
+        - run: |
+            echo ${{ steps.issue.outputs.issue }} 
+        - uses: ./.github/actions/hello
+          id: hello
+          with:
+             who-to-greet: "World"
+        - run: |
+            echo "Time: ${{ steps.hello.outputs.time }}"
+            echo $Hello
                   
        
