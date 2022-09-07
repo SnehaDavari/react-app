@@ -10,8 +10,8 @@ jobs:
             slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
             message: Hello  Slack
         - name: Open Github Issue 77
-          uses: SnehaDavari/open-issue@v1.0.0
-
+          
+        - uses: ./.github/actions/issue
           id: issue
           with: 
             token: ${{ secrets.GITHUB_TOKEN }}
@@ -19,6 +19,9 @@ jobs:
             body: Body
             assignees: |
              SnehaDavari
+             
+        - run: |
+            echo ${{ steps.issue.outputs.issue }}
              
         - run: |
             echo ${{ steps.issue.outputs.issue }} 
