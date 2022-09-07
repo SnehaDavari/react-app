@@ -3,7 +3,7 @@ jobs:
    testing-action:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2     
+        - uses: actions/checkout@v1    
         - name: Open Github Issue 77
           uses: SnehaDavari/open-issue@v1
           id: issue
