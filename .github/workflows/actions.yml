@@ -5,7 +5,7 @@ jobs:
       steps:
         - uses: actions/checkout@v1    
         - name: Open Github Issue 77
-          uses: SnehaDavari/open-issue@v1
+          uses: SnehaDavari/open-issue@v1.0.0
           id: issue
           with: 
             token: ${{ secrets.GITHUB_TOKEN }}
